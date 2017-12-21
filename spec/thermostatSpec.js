@@ -22,4 +22,11 @@ describe("Thermostat", function(){
       thermostat.down()
       expect(thermostat.temperature).toEqual(19)
     });
+
+    it ("should not go below the minimum temperature of 10 degrees", function(){
+      for (var i = 0; i < 11; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.temperature).toEqual(10)
+    });
 });
