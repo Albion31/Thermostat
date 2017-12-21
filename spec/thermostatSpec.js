@@ -13,4 +13,8 @@ describe("Thermostat", function(){
       expect(thermostat.reader).toBeDefined()
     });
 
+    it ("should increase the temperature with an up function", function(){
+      thermostat.up()
+      expect(thermostat.temperature).toEqual(21)
+    });
 });

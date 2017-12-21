@@ -5,3 +5,7 @@ function Thermostat(){
 Thermostat.prototype.reader = function(){
   return this.temperature
 };
+
+Thermostat.prototype.up = function(){
+  this.temperature ++
+};
