@@ -18,6 +18,7 @@ describe("Thermostat", function(){
   });
 
   describe("Turning temperature up and down", function(){
+
     describe("Up", function(){
       it ("should increase the temperature with an up function", function(){
         thermostat.up()
@@ -87,4 +88,25 @@ describe("Thermostat", function(){
       expect(thermostat.reader()).toEqual(20)
     });
   });
+
+  describe("Energy Usage", function(){
+    it ("should display low-usage when the current energy usage is < 18", function(){
+      for (var i = 0; i < 3; i ++ ) {
+        thermostat.down();
+      }
+      expect(thermostat.usage()).toEqual("low-usage")
+    });
+
+    it ("should display medium-usage when the current energy usage is between 18 and 25", function(){
+      expect(thermostat.usage()).toEqual("medium-usage")
+    });
+
+    it ("should display high-usage when the current energy usage is > 25", function(){
+      for (var i = 0; i < 6; i ++ ) {
+        thermostat.up();
+      }
+      expect(thermostat.usage()).toEqual("high-usage")
+    });
+  });
+
 });
