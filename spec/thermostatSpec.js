@@ -8,4 +8,9 @@ describe("Thermostat", function(){
     it("should start at 20 degrees", function(){
       expect(thermostat.temperature).toEqual(20)
     });
+
+    it("should read the temperature", function(){
+      expect(thermostat.reader).toBeDefined()
+    });
+
 });
