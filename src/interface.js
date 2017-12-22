@@ -46,7 +46,7 @@ $(document).ready(function(){
   //   })
   // })
 
-  displayWeather('london')
+  displayWeather('London')
 
   $('#select-city').submit(function(event) {
     event.preventDefault();
@@ -59,7 +59,9 @@ $(document).ready(function(){
    var token = '&appid=851d85483a04b5d9f64707097fa66a7b';
    var units = '&units=metric';
    $.get(url + token + units, function(data) {
-     $('#current-temperature').text(data.main.temp);
+     $('#city').text(city + " temperature:");
+
+     $('#city-temperature').text(data.main.temp);
    })
   }
 });
