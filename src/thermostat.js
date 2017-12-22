@@ -53,7 +53,7 @@ Thermostat.prototype.reset = function (){
 Thermostat.prototype.usage = function (){
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return "low-usage";
-  } else if (this.temperature > this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature < this.MAXIMUM_TEMPERATURE_PSM_ON) {
+  } else if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature < this.MAXIMUM_TEMPERATURE_PSM_ON) {
     return "medium-usage";
   } else {
     return "high-usage";
